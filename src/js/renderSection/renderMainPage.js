@@ -14,7 +14,7 @@ import PortraitEncyclopedia from "../../../public/img/mainPage/Portrait_encyclop
 import PortraitDrama from "../../../public/img/mainPage/Portrait_drama_rank1.webp";
 
 export function renderMainPage() {
-  quizContainer.classList.add("no-padding-on-mobile");
+  quizContainer.classList.add("padding-on-mobile");
 
   let mainPageHtml = `  
           <section class="quiz__main main shown "> 
@@ -56,7 +56,7 @@ export function renderMainPage() {
 function setUpSwiper() {
   const mySwiper = new Swiper(".swiper", {
     autoplay: {
-      delay: 0,
+      delay: 2000,
       stopOnLastSlide: false,
       disableOnInteraction: false,
     },

@@ -55,6 +55,7 @@ export function renderFinishedGamesSection() {
   updateIndexForRender(0);
   updateGlobalIndex(1);
   renderFinishedGames();
+  updateLoadMoreFinishedGamesVisibility();
   const addMoreFinishedGamesBtn = document.querySelector(
     '[data-action="load-more-finished-games"]'
   );
