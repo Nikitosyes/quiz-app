@@ -8,7 +8,7 @@ import "swiper/css/bundle";
 import imagePortraitConceptualization from "../../../public/img/mainPage/PortraitConceptualization.webp";
 import PortraitVisualCalculus from "../../../public/img/mainPage/PortraitVisualCalculus.webp";
 import PortraitRhetoric from "../../../public/img/mainPage/Portrait_rhetoric.webp";
-import PortraitLogic from "../../../public/img/mainPage/Portrait_rhetoric.webp";
+import PortraitLogic from "../../../public/img/mainPage/Portrait_logic.webp";
 import PortraitInlandEmpire from "../../../public/img/mainPage/Portrait_inland-empire.webp";
 import PortraitEncyclopedia from "../../../public/img/mainPage/Portrait_encyclopedia.webp";
 import PortraitDrama from "../../../public/img/mainPage/Portrait_drama_rank1.webp";
