@@ -1,0 +1,270 @@
+.questions {
+  &__content {
+    padding: 0px 50px 20px 50px;
+
+    @include medium-size {
+      padding: 0 15px 20px 15px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 10px;
+    margin-bottom: 30px;
+    padding: 15px 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    @include medium-size {
+      padding: 15px;
+      margin-bottom: 0;
+      row-gap: 0;
+    }
+
+    @include small-size {
+      padding-top: 55px;
+    }
+  }
+
+  &__list {
+    font-family: "Dangrek";
+    font-size: 32px;
+
+    span {
+      @include medium-size {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &__category {
+    width: 100%;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__timer {
+    background-color: rgba(0, 139, 139, 0.9);
+    height: 50px;
+    border-radius: 10px;
+    font-family: "Dangrek";
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+
+    &.ended {
+      background: rgba(201, 14, 14, 0.767);
+    }
+
+    @include small-size {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: 35px;
+    }
+
+    p {
+      @include medium-size {
+        font-size: 20px;
+      }
+    }
+
+    span {
+      background: rgb(47, 46, 46);
+      padding: 8px;
+      border-radius: 50%;
+
+      @include medium-size {
+        font-size: 22px;
+      }
+
+      @include small-size {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__question {
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 30px;
+    font-size: 22px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+
+    @include medium-size {
+      margin-bottom: 15px;
+    }
+
+    @include small-size {
+      font-size: 18px;
+    }
+  }
+
+  &__answers {
+    font-family: "Kanit";
+    display: grid;
+    gap: 15px;
+    margin-bottom: 55px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(
+        100% + 100px
+      ); /* add the left and right padding to the width */
+      height: 1px;
+      left: -50px; /* set the left offset to match the left padding */
+      right: -50px; /* set the right offset to match the right padding */
+      background-color: rgba(3, 201, 136, 0.4);
+      bottom: -30px;
+
+      @include medium-size {
+        width: calc(
+          100% + 30px
+        ); /* add the left and right padding to the width */
+        left: -15px; /* set the left offset to match the left padding */
+        right: -15px; /* set the right offset to match the right padding */
+      }
+    }
+
+    button {
+      display: block;
+      text-align: left;
+      font-size: 18px;
+      color: black;
+      line-height: 105%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 10px 10px 15px;
+      border-radius: 5px;
+      min-height: 50px;
+    }
+  }
+
+  &__answer {
+    transform: translateY(20px);
+    opacity: 0;
+
+    /*ANIMATIONS ON RENEDERING ANSWERS FOR EACH QUESTIONS*/
+
+    &:nth-child(1) {
+      transition: transform 0.4s ease 0.1s, opacity 0.4s ease 0.1s;
+    }
+
+    &:nth-child(2) {
+      transition: transform 0.4s ease 0.2s, opacity 0.4s ease 0.2s;
+    }
+
+    &:nth-child(3) {
+      transition: transform 0.4s ease 0.3s, opacity 0.4s ease 0.3s;
+    }
+
+    &:nth-child(4) {
+      transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
+    }
+
+    &.animate {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+    &.hover {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: translate(-4px, -2px);
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    &.wrong {
+      background-color: rgba(238, 19, 19, 0.8);
+      background-image: url("/src/img/x-mark.png");
+      background-position: 97% 50%;
+      background-size: 35px 35px;
+      background-repeat: no-repeat;
+      padding-right: 70px;
+    }
+
+    &.right {
+      background-color: rgb(19, 198, 19);
+      background-image: url("/src/img/checkmark.png");
+      background-position: 97% 50%;
+      background-size: 40px 40px;
+      background-repeat: no-repeat;
+      padding-right: 70px;
+    }
+  }
+
+  &__right-wrong {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 35px;
+
+    @include medium-size {
+      margin-bottom: 15px;
+    }
+
+    .right-wrong-answered {
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      @include medium-size {
+        width: 30px;
+        height: 30px;
+      }
+
+      &.right {
+        background: rgb(19, 198, 19);
+      }
+
+      &.wrong {
+        background-color: red;
+      }
+    }
+  }
+
+  &__next {
+    display: grid;
+    justify-items: end;
+    min-height: 60px;
+    position: relative;
+
+    .btn__next {
+      transition: all 0.3s ease;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .btn__player {
+      transition: all 0.3s ease;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    button {
+      background-color: rgba(0, 139, 139, 0.3);
+      color: rgba(255, 255, 255, 0.9);
+      padding: 10px 30px;
+      font-size: 22px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(0, 139, 139, 1);
+        color: black;
+      }
+    }
+  }
+}

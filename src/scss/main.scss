@@ -1,0 +1,152 @@
+@import "./utilities/nullstyle.scss";
+@import "./utilities/fonts";
+@import "./utilities/responsive";
+@import "./utilities/colors";
+
+@import "./sections/section-MAIN-PAGE";
+@import "./sections/sections-QUESTIONS";
+@import "./sections/_section_RESULTS";
+@import "./sections/section-FINISHD_GAMES";
+@import "./sections/section-CATEGORIES";
+@import "./sections/section-DIFFICULTY";
+@import "./sections/section-INPUT-NAME";
+@import "./sections/section_HOW-MANY-QUESTIONS";
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+body {
+  background-color: #050019;
+  font-size: 26px;
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 100vw;
+    margin-block: 0.5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100vw;
+    background-color: rgba(0, 139, 139, 1);
+
+    &:hover {
+      background: rgb(26, 174, 174);
+    }
+  }
+}
+
+.quiz {
+  padding: 10px 15px 40px 10px;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  position: relative;
+
+  .error-message {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: red;
+    font-size: 22px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  &__questions {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(29, 18, 18, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px inset rgba(3, 201, 136, 0.7);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3);
+    min-height: 570px;
+  }
+
+  &__results {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(191, 190, 190, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px inset rgba(3, 201, 136, 0.7);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3);
+  }
+
+  &__finished-games {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(191, 190, 190, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.4s ease;
+  }
+
+  &__categories {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(191, 190, 190, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px inset rgba(3, 201, 136, 0.7);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+  }
+
+  &__difficulty {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(191, 190, 190, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px inset rgba(3, 201, 136, 0.7);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+  }
+
+  &__input-name {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(191, 190, 190, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px inset rgba(3, 201, 136, 0.7);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+  }
+
+  &__numquestions {
+    max-width: 750px;
+    width: 100%;
+    background-color: rgba(191, 190, 190, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px inset rgba(3, 201, 136, 0.7);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+  }
+
+  &.no-padding-on-mobile {
+    @include small-size {
+      padding: 0 0 35px 0;
+    }
+  }
+}
+
+.go-back {
+  font-size: 32px;
+  margin-left: 10px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(0, 139, 139, 1);
+    transform: scale(115%);
+  }
+
+  @include small-size {
+    font-size: 28px;
+    margin-left: 0;
+  }
+}

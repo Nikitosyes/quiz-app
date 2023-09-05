@@ -1,0 +1,21 @@
+{
+  "name": "task_2_8",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.65.1",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "aos": "^2.3.4",
+    "he": "^1.2.0",
+    "swiper": "^10.2.0"
+  }
+}

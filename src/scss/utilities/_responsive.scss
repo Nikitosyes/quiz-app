@@ -1,0 +1,51 @@
+//from big to small sizes
+
+@mixin big-size {
+  @media (max-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin large-size {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin medium-size {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small-size {
+  @media (max-width: 560px) {
+    @content;
+  }
+}
+
+//from small to big sizes
+
+@mixin big-size-mobile {
+  @media (min-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin large-size-mobile {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin medium-size-mobile {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small-size-mobile {
+  @media (min-width: 560px) {
+    @content;
+  }
+}

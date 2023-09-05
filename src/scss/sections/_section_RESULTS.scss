@@ -1,0 +1,148 @@
+.results {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 65px;
+    padding: 25px 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    font-family: "Dangrek";
+
+    @include medium-size {
+      padding: 20px 15px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__top-heading {
+    font-size: 38px;
+
+    @include medium-size {
+      font-size: 32px;
+    }
+
+    span {
+      text-decoration: underline;
+      font-size: 40px;
+
+      @include medium-size {
+        font-size: 34px;
+      }
+    }
+  }
+
+  &__date {
+    font-family: "Kanit";
+
+    @include medium-size {
+      font-size: 25px;
+    }
+  }
+
+  &__content {
+    padding: 0px 50px 20px 50px;
+    font-family: "Dangrek";
+
+    @include medium-size {
+      padding: 0 15px 20px 15px;
+    }
+  }
+
+  &__answered-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 45px;
+
+    @include small-size {
+      margin-bottom: 25px;
+    }
+
+    .right-wrong-result {
+      border: 2px solid black;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+
+      @include small-size {
+        width: 30px;
+        height: 30px;
+      }
+
+      &.right {
+        background: rgb(19, 198, 19);
+      }
+
+      &.wrong {
+        background-color: red;
+      }
+    }
+  }
+
+  &__result {
+    margin-bottom: 65px;
+    position: relative;
+
+    @include small-size {
+      margin-bottom: 30px;
+      font-size: 22px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(
+        100% + 100px
+      ); /* add the left and right padding to the width */
+      height: 1px;
+      left: -50px; /* set the left offset to match the left padding */
+      right: -50px; /* set the right offset to match the right padding */
+      background-color: rgba(3, 201, 136, 0.4);
+      bottom: -30px;
+
+      @include medium-size {
+        width: calc(
+          100% + 30px
+        ); /* add the left and right padding to the width */
+        left: -15px; /* set the left offset to match the left padding */
+        right: -15px; /* set the right offset to match the right padding */
+      }
+    }
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 45px 0 10px 0;
+
+    @include medium-size {
+      padding: 15px 0 10px 0;
+    }
+
+    @include small-size {
+      flex-direction: column;
+      padding: 15px 0 10px 0;
+    }
+
+    button {
+      background-color: rgba(0, 139, 139, 0.3);
+      color: rgba(255, 255, 255, 0.9);
+      padding: 10px 30px;
+      font-size: 25px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      font-family: "Kanit";
+
+      &:hover {
+        background-color: rgba(0, 139, 139, 1);
+        color: black;
+      }
+    }
+  }
+}
