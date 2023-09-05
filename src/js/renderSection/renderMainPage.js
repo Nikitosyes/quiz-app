@@ -5,21 +5,28 @@ import {
 } from "../SectionsLogic/mainPageLogic";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
+import imagePortraitConceptualization from "../../../public/img/mainPage/PortraitConceptualization.webp";
+import PortraitVisualCalculus from "../../../public/img/mainPage/PortraitVisualCalculus.webp";
+import PortraitRhetoric from "../../../public/img/mainPage/Portrait_rhetoric.webp";
+import PortraitLogic from "../../../public/img/mainPage/Portrait_logic.webp";
+import PortraitInlandEmpire from "../../../public/img/mainPage/Portrait_inland-empire.webp";
+import PortraitEncyclopedia from "../../../public/img/mainPage/Portrait_encyclopedia.webp";
+import PortraitDrama from "../../../public/img/mainPage/Portrait_drama_rank1.webp";
 
 export function renderMainPage() {
-  quizContainer.classList.add("no-padding-on-mobile");
+  quizContainer.classList.add("padding-on-mobile");
 
   let mainPageHtml = `  
           <section class="quiz__main main shown "> 
            <div class="swiper main__img action" data-aos="zoom-out-up">
              <div class="swiper-wrapper">
-             <div class="swiper-slide swiper-slide-no-swiping"><img src="src/img/mainPage/Portrait_conceptualization_rank1.webp" alt=""></div>
-               <div class="swiper-slide swiper-slide-no-swiping"> <img src="src/img/mainPage/Portrait_inland-empire.webp" alt=""></div>
-               <div class="swiper-slide swiper-slide-no-swiping"><img src="src/img/mainPage/Portrait_drama_rank1.webp" alt=""></div>               
-               <div class="swiper-slide swiper-slide-no-swiping"><img src="src/img/mainPage/Portrait_encyclopedia.webp" alt=""></div>
-               <div class="swiper-slide swiper-slide-no-swiping"><img src="src/img/mainPage/Portrait_logic.webp" alt=""></div>
-               <div class="swiper-slide swiper-slide-no-swiping"><img src="src/img/mainPage/Portrait_rhetoric.webp" alt=""></div>
-               <div class="swiper-slide swiper-slide-no-swiping"><img src="src/img/mainPage/Portrait_visual-calculus_rank1.webp" alt=""></div>
+             <div class="swiper-slide swiper-slide-no-swiping"><img src="${imagePortraitConceptualization}" alt=""></div>
+               <div class="swiper-slide swiper-slide-no-swiping"> <img src="${PortraitInlandEmpire}" alt=""></div>
+               <div class="swiper-slide swiper-slide-no-swiping"><img src="${PortraitDrama}" alt=""></div>               
+               <div class="swiper-slide swiper-slide-no-swiping"><img src="${PortraitEncyclopedia}" alt=""></div>
+               <div class="swiper-slide swiper-slide-no-swiping"><img src="${PortraitLogic}" alt=""></div>
+               <div class="swiper-slide swiper-slide-no-swiping"><img src="${PortraitRhetoric}" alt=""></div>
+               <div class="swiper-slide swiper-slide-no-swiping"><img src="${PortraitVisualCalculus}" alt=""></div>
              </div>
            </div>
              <div class="main__selections">
@@ -49,7 +56,7 @@ export function renderMainPage() {
 function setUpSwiper() {
   const mySwiper = new Swiper(".swiper", {
     autoplay: {
-      delay: 0,
+      delay: 2000,
       stopOnLastSlide: false,
       disableOnInteraction: false,
     },

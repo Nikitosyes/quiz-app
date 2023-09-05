@@ -13,6 +13,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   renderMainPage();
-
-  console.log(finishedGames);
 });
