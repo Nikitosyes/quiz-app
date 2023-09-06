@@ -116,7 +116,7 @@ export async function startQuiz(categoryId, difficulty, questionsNumber) {
   function renderNextQuestionButton() {
     const containerForBtn = document.querySelector(".questions__next");
 
-    containerForBtn.innerHTML = `<button class="btn__next"  data-aos="zoom-out" type="button">Next Question</button>`;
+    containerForBtn.innerHTML = `<button class="btn__next" type="button">Next Question</button>`;
     let nextQuestionBtn = document.querySelector(".btn__next");
     nextQuestionBtn.addEventListener("click", () => {
       handleNextQuestionBtnClick();
@@ -126,7 +126,7 @@ export async function startQuiz(categoryId, difficulty, questionsNumber) {
   function renderGoToResultsNameBtn(questions) {
     const containerForBtn = document.querySelector(".questions__next");
 
-    containerForBtn.innerHTML = ` <button class="btn__player"  data-aos="zoom-out" type="button">Results</button>`;
+    containerForBtn.innerHTML = ` <button class="btn__player animate" type="button">Results</button>`;
     let goToResultsInputBtn = document.querySelector(".btn__player");
     goToResultsInputBtn.addEventListener("click", () => {
       setUpGoToResultsNameBtnClick(questions);

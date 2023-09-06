@@ -10,6 +10,7 @@ export async function fetchQuestions(categoryId, difficulty, questionsNumber) {
     if (data.results && data.results.length > 0) {
       return data.results;
     } else {
+      quizContainer.classList.add("flex-layout");
       showError(
         quizContainer,
         "Error while getting questions occured, pls select another category/difficulty/number of questions"

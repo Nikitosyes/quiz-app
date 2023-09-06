@@ -260,11 +260,29 @@
       padding: 10px 30px;
       font-size: 22px;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
 
       &:hover {
         background-color: rgba(0, 139, 139, 1);
         color: black;
+      }
+
+      &.animate {
+        border: 1px solid orangered;
+        animation: animation-btn;
+        animation-delay: 0.7s;
+        transition: transform 1.5s ease;
+      }
+
+      @keyframes animation-btn {
+        0% {
+          // opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          // opacity: 1;
+          transform: translateY(0px);
+        }
       }
     }
   }
