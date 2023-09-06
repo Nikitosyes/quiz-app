@@ -43,4 +43,5 @@ export function renderQuestionsHtml(question, currentQuestionIndex, questions) {
 </section>`;
 
   quizContainer.innerHTML = questionsSectionHtml;
+  quizContainer.classList.remove("flex-layout");
 }

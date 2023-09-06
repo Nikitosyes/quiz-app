@@ -18,6 +18,7 @@ export function renderHowManyQuestionsPerQuiz(categoryId, difficulty) {
  </section>`;
 
   quizContainer.innerHTML = howManyQuestionsPerQuizHtml;
+  quizContainer.classList.remove("flex-layout");
 
   const goBackToDifficultySection = document.querySelector(
     ".go-back-difficulty"

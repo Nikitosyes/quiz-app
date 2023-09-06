@@ -6,10 +6,11 @@ export function showError(errorContainer, message) {
   if (existingErrorMessageElement) {
     existingErrorMessageElement.remove();
   }
+
   const errorMessageElement = document.createElement("div");
   errorMessageElement.classList.add("error-message");
   errorMessageElement.innerHTML = `${message}`;
-  errorContainer.appendChild(errorMessageElement);
+  errorContainer.prepend(errorMessageElement);
 }
 
 export function removePossibleExistingError() {

@@ -17,6 +17,7 @@ export function renderChooseDifficulty(categoryId) {
 </section>`;
 
   quizContainer.innerHTML = chooseDifficultyHtml;
+  quizContainer.classList.remove("flex-layout");
 
   const goBackToCategories = document.querySelector(".go-back-categories");
 

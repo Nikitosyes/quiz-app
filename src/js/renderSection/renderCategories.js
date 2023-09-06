@@ -2,6 +2,7 @@ import { fetchCategories } from "../Request/fetchCategories";
 import { backToMainMenu } from "../SectionsLogic/mainPageLogic";
 import { quizContainer } from "../main";
 import { setUpCategoryButtonClicked } from "../SectionsLogic/categoriesSectionLogic";
+import loader from "../../../public/img/loader.gif";
 
 export function renderCategoriesSection() {
   let categoriesSectionHtml = `
@@ -16,6 +17,7 @@ export function renderCategoriesSection() {
 `;
 
   quizContainer.innerHTML = categoriesSectionHtml;
+  quizContainer.classList.remove("flex-layout");
 
   renderCategoriesSelection();
 
@@ -23,17 +25,43 @@ export function renderCategoriesSection() {
   goBackMainBtn.addEventListener("click", backToMainMenu);
 }
 
+// export async function renderCategoriesSelection() {
+//   const categoriesContainer = document.querySelector(".categories__selections");
+//   categoriesContainer.innerHTML = `<img src="${loader}"></img>`;
+//   const categories = await fetchCategories();
+
+//   let categoriesBtnsHtml = "";
+
+//   categories.forEach((category) => {
+//     let categoryBtnHtml = `<button data-id="${category.id}" data-aos="fade-up" type="button">${category.name}</button>`;
+//     categoriesBtnsHtml += categoryBtnHtml;
+//   });
+
+//   categoriesContainer.innerHTML += categoriesBtnsHtml;
+//   setUpCategoryButtonClicked();
+// }
+
 export async function renderCategoriesSelection() {
-  const categories = await fetchCategories();
   const categoriesContainer = document.querySelector(".categories__selections");
 
-  let categoriesBtnsHtml = "";
+  categoriesContainer.innerHTML = `<img src="${loader}"></img>`;
 
-  categories.forEach((category) => {
-    let categoryBtnHtml = `<button data-id="${category.id}" data-aos="fade-up" type="button">${category.name}</button>`;
-    categoriesBtnsHtml += categoryBtnHtml;
-  });
+  try {
+    const categories = await fetchCategories();
 
-  categoriesContainer.innerHTML += categoriesBtnsHtml;
-  setUpCategoryButtonClicked();
+    // Remove the loader image once data is fetched
+    categoriesContainer.innerHTML = "";
+
+    let categoriesBtnsHtml = "";
+
+    categories.forEach((category) => {
+      let categoryBtnHtml = `<button data-id="${category.id}" data-aos="fade-up" type="button">${category.name}</button>`;
+      categoriesBtnsHtml += categoryBtnHtml;
+    });
+
+    categoriesContainer.innerHTML += categoriesBtnsHtml;
+    setUpCategoryButtonClicked();
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+  }
 }
