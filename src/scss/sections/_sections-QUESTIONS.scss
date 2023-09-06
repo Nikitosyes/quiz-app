@@ -241,17 +241,16 @@
     position: relative;
 
     .btn__next {
-      transition: all 0.3s ease;
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      &.animate {
+        transition: opacity 0.5s ease;
+        opacity: 1;
+      }
     }
 
     .btn__player {
-      transition: all 0.3s ease;
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      &.animate {
+        opacity: 1;
+      }
     }
 
     button {
@@ -262,27 +261,13 @@
       border-radius: 5px;
       transition: background-color 0.3s ease, color 0.3s ease;
 
+      @include small-size {
+        margin-top: 20px;
+      }
+
       &:hover {
         background-color: rgba(0, 139, 139, 1);
         color: black;
-      }
-
-      &.animate {
-        border: 1px solid orangered;
-        animation: animation-btn;
-        animation-delay: 0.7s;
-        transition: transform 1.5s ease;
-      }
-
-      @keyframes animation-btn {
-        0% {
-          // opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          // opacity: 1;
-          transform: translateY(0px);
-        }
       }
     }
   }

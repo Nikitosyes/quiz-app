@@ -118,6 +118,9 @@ export async function startQuiz(categoryId, difficulty, questionsNumber) {
 
     containerForBtn.innerHTML = `<button class="btn__next" type="button">Next Question</button>`;
     let nextQuestionBtn = document.querySelector(".btn__next");
+    setTimeout(() => {
+      nextQuestionBtn.classList.add("animate");
+    }, 50);
     nextQuestionBtn.addEventListener("click", () => {
       handleNextQuestionBtnClick();
     });
